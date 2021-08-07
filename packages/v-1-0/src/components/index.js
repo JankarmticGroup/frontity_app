@@ -18,6 +18,7 @@ import logo from "../images/logo.png";
 import cart from "../images/cart.png";
 import services from "../images/services.jpg";
 import aboutus from "../images/aboutus.png";
+import Jnav from "./Jnav";
 
 const Root = ({ state }) => {
   const data = state.source.get(state.router.link);
@@ -26,61 +27,49 @@ const Root = ({ state }) => {
       <Global
         styles={css`
           * {
-            margin: 0;
-            padding: 0;
-            background-color: black;
           }
           html {
-            font-family: system-ui, Verdana, Arial, sans-serif;
-            color: purple;
-            display: grid;
+          }
+          container {
+          }
+          jcons {
+            padding-left: 80%;
+          }
+          heads {
+            display: flex;
           }
         `}
       />
+
       <Container>
-        <Header>
-          <Row xs="3">
-            <Col>
-              <img
-                className="logo"
-                src={logo}
-                height="75px"
-                width="75px"
-                alt="Logo"
-              />
-            </Col>
-            <Col>
-              <main>
-                <Switch>
-                  <List when={data.isArchive} />
-                  <Post when={data.isPost} />
-                  <Page when={data.isPage} />
-                </Switch>
-              </main>
-            </Col>
-            <Col>
-              <img
-                src={cart}
-                height="75px"
-                width="75px"
-                alt="Logo"
-                alt="cart"
-              />
-              <img src={services} height="75px" width="75px" alt="services" />
-              <img src={aboutus} height="75px" width="75px" alt="aboutus" />
-            </Col>
-          </Row>
-        </Header>
+        <Jnav />
+        <Row className="heads">
+          <Col>
+            <img
+              className="logo"
+              src={logo}
+              height="75px"
+              width="75px"
+              alt="Logo"
+            />
+          </Col>
+          <Col className="jcons">
+            <img src={cart} height="75px" width="75px" alt="Logo" alt="cart" />
+            <img src={services} height="75px" width="75px" alt="services" />
+            <img src={aboutus} height="75px" width="75px" alt="aboutus" />
+          </Col>
+        </Row>
+
+        <main>
+          <Switch>
+            <List when={data.isArchive} />
+            <Post when={data.isPost} />
+            <Page when={data.isPage} />
+          </Switch>
+        </main>
       </Container>
     </>
   );
 };
 
 export default connect(Root);
-const Header = styled.header`
-  background-color: Black;
-  padding: 1em;
-  h1 {
-    color: purple;
-  }
-`;

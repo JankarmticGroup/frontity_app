@@ -15,7 +15,7 @@ const settings = {
       name: "@frontity/wp-source",
       state: {
         source: {
-          url: "http://127.0.0.1/wp-vs-5.7.2",
+          url: "https://jankarmtic.com/",
         },
       },
     },
