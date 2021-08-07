@@ -6,6 +6,8 @@ import Link from "@frontity/components/link";
 
 const List = ({ state }) => {
   const data = state.source.get(state.router.link);
+  console.log(data);
+  console.log(state);
 
   return (
     <div>

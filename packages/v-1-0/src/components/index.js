@@ -24,26 +24,15 @@ const Root = ({ state }) => {
   const data = state.source.get(state.router.link);
   return (
     <>
-      <Global
-        styles={css`
-          * {
-          }
-          html {
-          }
-          container {
-          }
-          jcons {
-            padding-left: 80%;
-          }
-          heads {
-            display: flex;
-          }
-        `}
-      />
+      <Global styles={css``} />
 
-      <Container>
-        <Jnav />
-        <Row className="heads">
+      <Container css={css``}>
+        <Row
+          xs="3"
+          css={css`
+            display: flex;
+          `}
+        >
           <Col>
             <img
               className="logo"
@@ -53,8 +42,20 @@ const Root = ({ state }) => {
               alt="Logo"
             />
           </Col>
-          <Col className="jcons">
-            <img src={cart} height="75px" width="75px" alt="Logo" alt="cart" />
+          <Col
+            css={css`
+              min-width: 35%;
+            `}
+          ></Col>
+          <Col css={css``}>
+            <img
+              src={cart}
+              height="75px"
+              width="75px"
+              alt="Logo"
+              alt="cart"
+              css={css``}
+            />
             <img src={services} height="75px" width="75px" alt="services" />
             <img src={aboutus} height="75px" width="75px" alt="aboutus" />
           </Col>
