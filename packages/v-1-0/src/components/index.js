@@ -19,9 +19,11 @@ import cart from "../images/cart.png";
 import services from "../images/services.jpg";
 import aboutus from "../images/aboutus.png";
 import Jnav from "./Jnav";
+import CategorySales from "./CategorySales";
 
 const Root = ({ state }) => {
   const data = state.source.get(state.router.link);
+
   return (
     <>
       <Global styles={css``} />
@@ -62,11 +64,7 @@ const Root = ({ state }) => {
         </Row>
 
         <main>
-          <Switch>
-            <List when={data.isArchive} />
-            <Post when={data.isPost} />
-            <Page when={data.isPage} />
-          </Switch>
+          <CategorySales />
         </main>
       </Container>
     </>

@@ -16,6 +16,13 @@ const settings = {
       state: {
         source: {
           url: "https://jankarmtic.com/",
+          postTypes: [
+            {
+              type: "sales",
+              endpoint: "sales",
+              archive: "/sales",
+            },
+          ],
         },
       },
     },
